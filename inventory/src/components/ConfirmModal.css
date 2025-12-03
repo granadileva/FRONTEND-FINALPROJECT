@@ -1,0 +1,64 @@
+/* ===== GLOBAL MODAL OVERLAY ===== */
+.modal-overlay,
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(76, 79, 80, 0.733);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ===== GENERIC MODAL BOX ===== */
+.modal-box,
+.confirm-box {
+  background: rgb(255, 254, 254);
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== ACTION BUTTONS (Shared) ===== */
+.modal-actions,
+.confirm-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* ===== CONFIRM BUTTONS ===== */
+.btn-confirm,
+.ok-btn {
+  background: #0066ff;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cancel,
+.cancel-btn {
+  background: #ffffff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== DELETE CONFIRMATION SPECIAL STYLES ===== */
+.btn-confirm.delete {
+  background: #d32f2f;
+}
+
+.btn-confirm.delete:hover {
+  background: #b71c1c;
+}
+
+.btn-cancel:hover {
+  background: #bbb;
+}
