@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { getSuppliers, deleteSupplier } from "../api";
 import AddSupplier from "./AddSupplier";
+import EditSupplier from "./EditSupplier"; // ← you will create this component
 
 function SupplierList() {
   const [suppliers, setSuppliers] = useState([]);
   const [adding, setAdding] = useState(false);
+  const [editing, setEditing] = useState(null); // ← store supplier being edited
 
   async function load() {
     try {
@@ -40,7 +42,26 @@ function SupplierList() {
         Add Supplier
       </button>
 
-      {adding && <AddSupplier onDone={() => { setAdding(false); load(); }} />}
+      {/* Add Supplier Form */}
+      {adding && (
+        <AddSupplier
+          onDone={() => {
+            setAdding(false);
+            load();
+          }}
+        />
+      )}
+
+      {/* Edit Supplier Form */}
+      {editing && (
+        <EditSupplier
+          supplier={editing}
+          onDone={() => {
+            setEditing(null);
+            load();
+          }}
+        />
+      )}
 
       <table className="table">
         <thead>
@@ -48,17 +69,27 @@ function SupplierList() {
             <th>Name</th>
             <th>Contact</th>
             <th>Actions</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
-          {suppliers.map(s => (
+          {suppliers.map((s) => (
             <tr key={s._id}>
               <td>{s.name}</td>
               <td>{s.contact}</td>
-              <td>{s.actions}</td>
               <td>
-                <button className="btn btn-danger" onClick={() => handleDelete(s._id)}>
+                {/* EDIT BUTTON */}
+                <button
+                  className="btn btn-warning"
+                  onClick={() => setEditing(s)}
+                >
+                  Edit
+                </button>
+
+                {/* DELETE BUTTON */}
+                <button
+                  className="btn btn-danger ms-2"
+                  onClick={() => handleDelete(s._id)}
+                >
                   Delete
                 </button>
               </td>
