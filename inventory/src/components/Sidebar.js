@@ -32,14 +32,20 @@ export default function Sidebar({ active, onNavigate }) {
         `}
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center space-x-2">
-            <span className="text-2xl">🛒</span>
-            <span className="text-xl font-bold leading-tight">
-              INVENTORY<br />MANAGEMENT
-            </span>
-          </div>
-        </div>
+<div className="flex items-center justify-between mb-6">
+  <div className="flex items-center space-x-3">
+
+    {/* Icon */}
+    <span className="text-4xl text-yellow-400">🛒</span>
+
+    {/* Title */}
+    <span className="text-2xl text-blue-300 font-extrabold tracking-wide leading-tight">
+      INVENTORY<br />MANAGEMENT
+    </span>
+
+  </div>
+</div>
+
 
         {/* Navigation */}
         <nav className="flex flex-col space-y-2">
