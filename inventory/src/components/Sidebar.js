@@ -26,7 +26,7 @@ export default function Sidebar({ active, onNavigate }) {
 
           {!collapsed && (
             <span className="text-xl font-bold tracking-wide">
-              Inventory
+              Inventory Management
             </span>
           )}
         </div>
