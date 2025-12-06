@@ -39,10 +39,6 @@ export default function Sidebar({ active, onNavigate }) {
               INVENTORY<br />MANAGEMENT
             </span>
           </div>
-
-          <button className="md:hidden text-2xl" onClick={() => setOpen(false)}>
-            ✖
-          </button>
         </div>
 
         {/* Navigation */}
